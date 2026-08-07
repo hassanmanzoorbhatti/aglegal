@@ -1,0 +1,10 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { RevealGroup, RevealItem } from "@/components/motion/Reveal";
+import { PageHero, SiteShell } from "@/components/site/Sections";
+import { Eyebrow } from "@/components/site/SiteUi";
+import { ConsultationForm } from "@/components/site/ConsultationForm";
+import { FIRM } from "@/lib/site-data";
+
+export const Route = createFileRoute("/contact")({ head: () => ({ meta: [{ title: "Contact AG Legal Group" }, { name: "description", content: "Contact AG Legal Group for fixed-fee legal support across England and Wales. Email Info@aglegalgroup.co.uk or chat on WhatsApp." }], links: [{ rel: "canonical", href: "/contact" }] }), component: ContactPage });
+function Row({label,children}:{label:string;children:React.ReactNode}){return <div className="border-t border-clause-border py-7"><Eyebrow className="!text-clause-muted">{label}</Eyebrow><div className="mt-3 font-grotesk text-[17px] leading-[1.6] text-clause-cream md:text-[19px]">{children}</div></div>}
+function ContactPage(){return <SiteShell><PageHero eyebrow="Contact" title={"Reach out to us today."} description="Tell us briefly how we can help. For the fastest response, contact AG Legal Group on WhatsApp."/><section className="grid grid-cols-1 border-t border-clause-border md:grid-cols-[56fr_44fr]"><div className="px-4 py-12 md:border-r md:border-clause-border md:px-16 md:py-16"><ConsultationForm/></div><div className="px-4 py-12 md:px-16 md:py-16"><RevealGroup stagger={0.08}><RevealItem><Row label="Email"><a href={`mailto:${FIRM.email}`} className="break-all hover:opacity-70">{FIRM.email}</a></Row></RevealItem><RevealItem><Row label="WhatsApp / Phone"><a href={FIRM.whatsapp} target="_blank" rel="noreferrer" className="hover:opacity-70">{FIRM.phone}</a></Row></RevealItem><RevealItem><Row label="Coverage">Individuals and small businesses across England and Wales</Row></RevealItem></RevealGroup><p className="mt-8 font-grotesk text-[14px] leading-[1.7] text-clause-muted">Please include a short summary of your matter so the team can understand the issue and guide you toward the appropriate service.</p></div></section></SiteShell>}
