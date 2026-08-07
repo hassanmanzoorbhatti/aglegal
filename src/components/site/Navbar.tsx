@@ -57,7 +57,7 @@ export function Navbar() {
             </ul>
             <Link
               to="/contact"
-              className="inline-flex min-h-[44px] items-center gap-2 border border-clause-pink px-4 py-2 font-grotesk text-[12px] font-semibold uppercase tracking-[0.08em] text-clause-pink transition-colors duration-300 hover:bg-clause-pink hover:text-clause-onaccent"
+              className="inline-flex min-h-[44px] items-center gap-2 border border-clause-pink bg-clause-pink px-4 py-2 font-grotesk text-[12px] font-semibold uppercase tracking-[0.08em] text-clause-onaccent transition-all duration-300 hover:opacity-90"
             >
               Start Now
               <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.5} />

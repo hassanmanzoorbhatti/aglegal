@@ -1,8 +1,9 @@
-import disputesImg from "../assets/service-disputes.jpg";
-import propertyImg from "../assets/service-property.jpg";
-import contractsImg from "../assets/service-contracts.jpg";
-import businessImg from "../assets/service-business.jpg";
-import familyImg from "../assets/service-family.jpg";
+import disputesImg from "../assets/ag-service-1-disputes.jpg";
+import tenantImg from "../assets/ag-service-2-tenant.jpg";
+import landlordImg from "../assets/ag-service-3-landlord.jpg";
+import contractsImg from "../assets/ag-service-4-contracts.jpg";
+import willsImg from "../assets/ag-service-5-wills.jpg";
+import documentReviewImg from "../assets/ag-service-6-document-review.jpg";
 
 export type Service = {
   number: string;
@@ -33,14 +34,14 @@ export const PRIMARY_SERVICES: Service[] = [
     name: "Tenant Services",
     description:
       "Clear, practical document and dispute support for tenants who need their position set out professionally.",
-    image: propertyImg,
+    image: tenantImg,
   },
   {
     number: "03",
     name: "Landlord Services",
     description:
       "Straightforward legal-document support for landlords, with a focus on clarity, process and fixed-fee certainty.",
-    image: businessImg,
+    image: landlordImg,
   },
 ];
 
@@ -67,7 +68,20 @@ export const ADDITIONAL_SERVICES: Service[] = [
     name: "Will Services",
     description:
       "Simple will services designed to make an important legal document easier to arrange and understand.",
-    image: familyImg,
+    image: willsImg,
+  },
+  {
+    number: "06",
+    name: "Document Review & Letter Drafting",
+    description:
+      "Professional review and drafting support for important legal documents, formal letters and written correspondence.",
+    image: documentReviewImg,
+    details: [
+      "Formal letter drafting",
+      "Document review and feedback",
+      "Complaint and response letters",
+      "Custom written legal correspondence",
+    ],
   },
 ];
 

@@ -1,13 +1,13 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { RevealImage } from "@/components/motion/RevealImage";
 import { Eyebrow, TextLink } from "./SiteUi";
-import founderImage from "../../assets/hero-handshake.jpg";
+import founderImage from "../../assets/ag-founder.webp";
 
 export function LeadershipBlock() {
   return (
     <section className="grid grid-cols-1 border-b border-clause-border md:grid-cols-[45fr_55fr]">
       <div className="md:border-r md:border-clause-border">
-        <RevealImage src={founderImage} alt="Professional legal support meeting" wrapperClassName="h-full" className="aspect-square h-full w-full object-cover object-center" />
+        <RevealImage src={founderImage} alt="Arslahn Gillani, Founder of AG Legal Group" wrapperClassName="h-full" className="aspect-square h-full w-full object-cover object-center" />
       </div>
       <div className="px-4 py-14 md:px-12 md:py-20">
         <Reveal><Eyebrow>About the founder</Eyebrow></Reveal>
