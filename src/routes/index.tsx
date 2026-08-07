@@ -32,11 +32,11 @@ export const Route = createFileRoute("/")({
 
 function Hero() {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-[52fr_48fr]">
-      <div className="md:order-2 md:border-l md:border-clause-border">
-        <RevealImage src={heroImage} alt="Professional legal consultation" width={1024} height={1229} wrapperClassName="h-full w-full" className="aspect-[1/1.2] w-full object-cover object-[center_28%]" />
+    <section className="grid grid-cols-1 md:h-[650px] md:grid-cols-[52fr_48fr]">
+      <div className="md:order-2 md:h-[650px] md:border-l md:border-clause-border">
+        <RevealImage src={heroImage} alt="Professional legal consultation" width={1024} height={1229} wrapperClassName="h-full w-full" className="aspect-[1/1.2] w-full object-cover object-[center_28%] md:h-full md:aspect-auto" />
       </div>
-      <div className="flex flex-col justify-center px-4 py-12 md:order-1 md:px-12 md:py-20">
+      <div className="flex flex-col justify-center px-4 py-12 md:order-1 md:h-[650px] md:px-12 md:py-20">
         <Reveal immediate delay={HERO_DELAY - 0.1}><Eyebrow>AG Legal Group</Eyebrow></Reveal>
         <AnimatedText as="h1" immediate delay={HERO_DELAY} text={"Clear. Practical.\nFixed-Fee Legal\nSupport."} className="mt-5 font-serif-display font-normal leading-[1.1] text-clause-heading text-[32px] md:text-[clamp(2rem,1rem+2.5vw,3rem)]" />
         <RevealGroup immediate delay={HERO_DELAY + 0.35} stagger={0.12}>
@@ -60,11 +60,11 @@ function Introduction() {
 }
 
 function ServiceCard({ service }: { service: Service }) {
-  return <Link to="/services" className="group flex h-full flex-col" aria-label={service.name}><div className="relative aspect-[3/4] overflow-hidden"><RevealImage src={service.image!} alt={service.name} wrapperClassName="h-full w-full" className="h-full w-full object-cover" hoverScale/><div className="absolute right-0 top-0 flex h-11 w-11 items-center justify-center bg-clause-bg"><ArrowUpRight className="h-4 w-4 text-clause-pink"/></div></div><div className="flex flex-1 flex-col p-6 md:p-8"><span className="font-grotesk text-[12px] font-semibold tracking-[0.14em] text-clause-sage">{service.number}</span><h3 className="mt-3 font-serif-display text-[22px] leading-[1.2] text-clause-heading md:text-[24px]">{service.name}</h3><p className="mt-3 font-grotesk text-[15px] leading-[1.65] text-clause-muted">{service.description}</p></div></Link>;
+  return <Link to="/services" className="group flex h-full flex-col" aria-label={service.name}><div className="relative aspect-[4/3] overflow-hidden"><RevealImage src={service.image!} alt={service.name} wrapperClassName="h-full w-full" className="h-full w-full object-cover" hoverScale/><div className="absolute right-0 top-0 flex h-11 w-11 items-center justify-center bg-clause-bg"><ArrowUpRight className="h-4 w-4 text-clause-pink"/></div></div><div className="flex flex-1 flex-col p-6 md:p-8"><span className="font-grotesk text-[12px] font-semibold tracking-[0.14em] text-clause-sage">{service.number}</span><h3 className="mt-3 font-serif-display text-[22px] leading-[1.2] text-clause-heading md:text-[24px]">{service.name}</h3><p className="mt-3 font-grotesk text-[15px] leading-[1.65] text-clause-muted">{service.description}</p></div></Link>;
 }
 
 function Services() {
-  return <section className="border-t border-clause-border"><div className="border-b border-clause-border px-4 py-16 md:px-24 md:py-24"><div className="mx-auto max-w-[700px] md:text-center"><Reveal><Eyebrow>Our Services</Eyebrow></Reveal><AnimatedText as="h2" text={"Focused legal support\nfor everyday matters."} className="mt-5 font-serif-display font-normal leading-[1.12] text-clause-heading text-[clamp(1.75rem,1rem+3vw,3rem)]"/><Reveal delay={0.15}><p className="mt-5 font-grotesk text-[16px] leading-[1.65] text-clause-muted md:text-[17px]">Professional drafting, dispute correspondence and practical support, delivered with transparent fixed-fee pricing wherever possible.</p></Reveal></div></div><div className="px-4 py-8 md:px-8 md:py-10"><RevealGroup className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3" stagger={0.08}>{ALL_SERVICES.map((s)=><RevealItem key={s.name} className="h-full overflow-hidden border border-clause-border bg-clause-surface"><ServiceCard service={s}/></RevealItem>)}</RevealGroup></div><div className="border-b border-clause-border px-4 py-10 text-center"><PrimaryButton to="/services">Explore All Services</PrimaryButton></div></section>;
+  return <section className="border-t border-clause-border"><div className="border-b border-clause-border px-4 py-16 md:px-24 md:py-24"><div className="mx-auto max-w-[700px] md:text-center"><Reveal><Eyebrow>Our Services</Eyebrow></Reveal><AnimatedText as="h2" text={"Focused legal support\nfor everyday matters."} className="mt-5 font-serif-display font-normal leading-[1.12] text-clause-heading text-[clamp(1.75rem,1rem+3vw,3rem)]"/><Reveal delay={0.15}><p className="mt-5 font-grotesk text-[16px] leading-[1.65] text-clause-muted md:text-[17px]">Professional drafting, dispute correspondence and practical support, delivered with transparent fixed-fee pricing wherever possible.</p></Reveal></div></div><div className="px-0 py-8 md:px-8 md:py-10"><RevealGroup className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3" stagger={0.08}>{ALL_SERVICES.map((s)=><RevealItem key={s.name} className="h-full overflow-hidden border border-clause-border bg-clause-surface"><ServiceCard service={s}/></RevealItem>)}</RevealGroup></div><div className="border-b border-clause-border px-4 py-10 text-center"><PrimaryButton to="/services">Explore All Services</PrimaryButton></div></section>;
 }
 
 const APPROACH = [

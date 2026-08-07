@@ -27,13 +27,15 @@ export function PageHero({
   eyebrow,
   title,
   description,
+  compactDesktop = false,
 }: {
   eyebrow: string;
   title: string;
   description: string;
+  compactDesktop?: boolean;
 }) {
   return (
-    <section className="border-b border-clause-border px-4 py-16 md:px-24 md:py-28">
+    <section className={`border-b border-clause-border px-4 py-16 ${compactDesktop ? "md:px-8 md:py-24" : "md:px-24 md:py-28"}`}>
       <Reveal>
         <Eyebrow>{eyebrow}</Eyebrow>
       </Reveal>
